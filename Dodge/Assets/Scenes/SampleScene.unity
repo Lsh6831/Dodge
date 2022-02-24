@@ -717,7 +717,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 755028589}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &755028591
 Camera:
   m_ObjectHideFlags: 0
@@ -906,6 +906,7 @@ GameObject:
   - component: {fileID: 1256857125}
   - component: {fileID: 1256857124}
   - component: {fileID: 1256857123}
+  - component: {fileID: 1256857128}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -927,7 +928,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 84
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!136 &1256857124
 CapsuleCollider:
@@ -1000,9 +1001,24 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1256857122}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: -8.012}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1256857128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256857122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: def52a549902f5a4c9ead17ddb4eff07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerRigidbody: {fileID: 1256857123}
+  speed: 2.5
+  my: {fileID: 1256857122}
