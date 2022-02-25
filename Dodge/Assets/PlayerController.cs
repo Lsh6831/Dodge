@@ -30,8 +30,29 @@ public class PlayerController : MonoBehaviour
         //Vertical=수직(z값)
         //키보드의 : 'W',윗쪽방향키 : 양의방향 : +1.0f
         //키보드의 : 'S',아래쪽방향키 : 음의 방향 : -1.0f
-
         float yinput = Input.GetAxis("Jump");
+
+        //실제 이동 속도를 입력값과 이동 속력을 사용해 결정
+        float xSpeed = xinput * speed;
+        float zSpeed = zinput * speed;
+        float ySpeed = yinput * speed/4;
+        //vector3 속도를 (xSpeed,0f,zSpeed) 생성
+        Vector3 newvelocity = new Vector3(xSpeed, ySpeed, zSpeed);
+        //     ↑이름 아무거나↑new 꼭 쓰고 백터3 다시 입력하고 수치 입력
+
+        //리지디바디의 물리적인 힘에 따른 처리가 아니라 -> 속도에 따른 처리
+        //리지디 바디에 속도에 nowvelocity 할당
+        playerRigidbody.velocity = newvelocity;
+
+        //playerRigidbody.velocity += newvelocity;
+        //이건 누적 속도
+
+        //위에꺼 축약
+        //playerRigidbody.velocity = new Vector3(xinput * speed, 0f, zinput * speed);
+
+
+
+
     }
 
 
@@ -61,7 +82,7 @@ public class PlayerController : MonoBehaviour
             playerRigidbody.AddForce(0f, 2f, 0f);
         }
     }
-    void Die()
+    public void Die()
     {
         //켜는건 True 끄는건 False
         my.SetActive(false);
